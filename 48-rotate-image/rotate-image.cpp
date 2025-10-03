@@ -1,19 +1,25 @@
 class Solution {
 public:
+    
+    void transpose(vector<vector<int>>& matrix)
+    {
+        int m=matrix.size(),n=matrix[0].size();
+        for(int i=0;i<m;i++)
+        {
+            for(int j=i+1;j<n;j++)
+            {
+                swap(matrix[i][j],matrix[j][i]);
+            }
+        }
+    }
     void rotate(vector<vector<int>>& matrix) {
-      vector<vector<int>> ans = matrix;
-      int m = matrix.size(),n=matrix[0].size();
-      int p=0,q=n-1;
+      int m=matrix.size(),n=matrix[0].size();
+      transpose(matrix);
       for(int i=0;i<m;i++)
       {
-        for(int j=0;j<n;j++)
-        {
-            ans[p][q]=matrix[i][j];
-            p++;
-        }
-        p=0;
-        q--;
-      } 
-      matrix=ans; 
+       
+        reverse(matrix[i].begin(),matrix[i].end());
+     
+      }
     }
 };
