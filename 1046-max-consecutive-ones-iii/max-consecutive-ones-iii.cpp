@@ -1,6 +1,6 @@
 class Solution {
 public:
-    int longestOnes(vector<int>& nums, int k) {     //brute aaproach
+    int longestOnes(vector<int>& nums, int k) {     //opti aaproach
         
        int max_len=0,count=0;
        int l=0,r=l;
